@@ -2,13 +2,13 @@ import java.util.Objects;
 
 
 public class Employee {
-    int departament;
-    int salary;
-    static int count;
-    int id;
-    String lastName;
-    String ferstName;
-    String midlleName;
+    private int departament;
+    private int salary;
+    private static int count;
+    private int id;
+    private String lastName;
+    private String ferstName;
+    private String midlleName;
 
 
     public Employee(String lastName, String ferstName, String middleName, int departament, int salary) {
@@ -17,18 +17,13 @@ public class Employee {
         setMidlleName(middleName);
         setDepartament(departament);
         setSalary(salary);
-        setId(count++);
+        setId(++count);
 
     }
 
     public String getFullInfo() {
-        return this.getFullName() + " " + this.departament + " " + this.salary + " ";
+        return this.getFullName() + " " + this.departament + " " + this.salary + " " + this.id;
 
-    }
-
-    public static int id(int id) {
-        id++;
-        return id;
     }
 
     String getFullName() {
@@ -68,7 +63,7 @@ public class Employee {
     }
 
     public void setId(int id) {
-        this.id = count++;
+        this.id = ++count;
     }
 
 
