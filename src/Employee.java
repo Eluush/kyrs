@@ -18,9 +18,7 @@ public class Employee {
         setDepartament(departament);
         setSalary(salary);
         setId(count++);
-        this.id = count++;
-        this.salary = salary;
-        this.departament = departament;
+
     }
 
     public String getFullInfo() {
