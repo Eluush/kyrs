@@ -80,5 +80,5 @@ public class Employee {
         return Objects.hash(getFullName(), departament, salary, id);
     }
 
-
+    private final Employee[] employees;
 }
