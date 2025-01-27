@@ -29,21 +29,66 @@ public class Main {
         System.out.println(employees[7].toString());
         System.out.println(employees[8].toString());
         System.out.println(employees[9].toString());
+        System.out.println("Сумма всех затрат на зарплаты составляет =" + getSumSalary(employees));
+        System.out.println("Минимальная зарптала составляет =" + getMinSalary(employees));
+        System.out.println("Максимальная зарптала составляет =" + getMaxSalary(employees));
+        System.out.println(employees[0].getFullName());
+        System.out.println(employees[1].getFullName());
+        System.out.println(employees[2].getFullName());
+        System.out.println(employees[3].getFullName());
+        System.out.println(employees[4].getFullName());
+        System.out.println(employees[5].getFullName());
+        System.out.println(employees[6].getFullName());
+        System.out.println(employees[7].getFullName());
+        System.out.println(employees[8].getFullName());
+        System.out.println(employees[9].getFullName());
+        System.out.println(getTheAverageValue(employees));
 
+    }
 
-
+    public static int getSumSalary(Employee[] employees) {
         int sum = 0;
         for (Employee employee : employees) {
             if (employee != null) {
                 sum += employee.getSalary();
             }
-            return    ;
+
 
         }
-        System.out.println("Сумма всех затрат на зарплаты равна = " + sum);
-
+        return sum;
     }
 
+    public static int getMinSalary(Employee[] employees) {
+        int minSalary = getSumSalary(employees);
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getSalary() != 0 && employees[i].getSalary() < minSalary) {
+                minSalary = employees[i].getSalary();
 
+            }
+
+        }
+        return minSalary;
+    }
+    public static int getMaxSalary(Employee[] employees) {
+        int maxSalary = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getSalary() != 0 && employees[i].getSalary() > maxSalary) {
+                maxSalary = employees[i].getSalary();
+
+            }
+
+        }
+        return maxSalary;
+    }
+    public static int getTheAverageValue(Employee[] employees){
+        int theAverageValue = getSumSalary(employees);
+        for (int i = 0; i < employees.length; i++) {
+            theAverageValue=getSumSalary(employees)/employees.length;
+        }
+        return theAverageValue;
+
+
+
+    }
 
 }
