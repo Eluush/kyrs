@@ -31,18 +31,18 @@ public class Main {
         System.out.println(employees[9].toString());
 
 
-    }
 
-
-        public static int getSumSalary(int employees) {
         int sum = 0;
         for (Employee employee : employees) {
             if (employee != null) {
                 sum += employee.getSalary();
             }
-            return  sum;
+            return    ;
+
         }
-       }
+        System.out.println("Сумма всех затрат на зарплаты равна = " + sum);
+
+    }
 
 
 
