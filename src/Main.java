@@ -5,7 +5,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        static void mainMenu() throws MyException
+
         Employee[] employees = new Employee[10];
         employees[0] = new Employee("Иванов", "Иван", "Иванович", 1, 10000);
         employees[1] = new Employee("Петров", "Петр", "Петрович", 2, 12000);
@@ -17,14 +17,7 @@ public class Main {
         employees[7] = new Employee("Шибина", "Кристина", "Анатольевна", 3, 18000);
         employees[8] = new Employee("Дедяева", "Анастасия", "Сергеевна", 4, 20000);
         employees[9] = new Employee("Гурченко", "Наталья", "Алексеевна", 5, 17000);
-        Scanner scan = new Scanner(System.in);
-        int choice = 0;
-        try {
-            choice = scan.nextInt();
-        } catch (InputMismatchException e) {
-            choiceMenu(0);
-        }
-        choiceMenu(choice);
+
 
         System.out.println(employees[0].toString());
         System.out.println(employees[1].toString());
@@ -37,30 +30,19 @@ public class Main {
         System.out.println(employees[8].toString());
         System.out.println(employees[9].toString());
 
-        static void choiceMenu(int choice) throws MyException {
-            Scanner sc = new Scanner(System.in);
-            String tempInt;
-            String tempDouble = "notInit";
-            String firstName, lastName, middleName;
-            String EXIT_MAIN_MENU = "\"0\". для выхода в главное меню. ";
-            String EXIT = "Нажмите любую клавишу для выхода. ";
+
+    }
 
 
-
-
-
-        }
-
-        public static int getSumSalary(employees) {
-         int sum = 0;
-          for (Employee employee : employees) {
+        public static int getSumSalary(int employees) {
+        int sum = 0;
+        for (Employee employee : employees) {
             if (employee != null) {
                 sum += employee.getSalary();
             }
-            return sum;
-          }
+            return  sum;
         }
-    }
+       }
 
 
 
