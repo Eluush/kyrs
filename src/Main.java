@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
         Employee[] employees = new Employee[10];
         employees[0] = new Employee("Иванов", "Иван", "Иванович", 1, 10000);
         employees[1] = new Employee("Петров", "Петр", "Петрович", 2, 12000);
@@ -17,6 +19,7 @@ public class Main {
         employees[7] = new Employee("Шибина", "Кристина", "Анатольевна", 3, 18000);
         employees[8] = new Employee("Дедяева", "Анастасия", "Сергеевна", 4, 20000);
         employees[9] = new Employee("Гурченко", "Наталья", "Алексеевна", 5, 17000);
+
 
 
         System.out.println(employees[0].toString());
@@ -44,6 +47,11 @@ public class Main {
         System.out.println(employees[9].getFullName());
         System.out.println(getTheAverageValue(employees));
 
+
+    }
+    public static void printAllEmployees(Employee[] employees){
+        return;
+
     }
 
     public static int getSumSalary(Employee[] employees) {
@@ -69,6 +77,7 @@ public class Main {
         }
         return minSalary;
     }
+
     public static int getMaxSalary(Employee[] employees) {
         int maxSalary = 0;
         for (int i = 0; i < employees.length; i++) {
@@ -80,14 +89,11 @@ public class Main {
         }
         return maxSalary;
     }
-    public static int getTheAverageValue(Employee[] employees){
+
+    public static int getTheAverageValue(Employee[] employees) {
         int theAverageValue = getSumSalary(employees);
-        for (int i = 0; i < employees.length; i++) {
-            theAverageValue=getSumSalary(employees)/employees.length;
-        }
+        theAverageValue = getSumSalary(employees) / employees.length;
         return theAverageValue;
-
-
 
     }
 

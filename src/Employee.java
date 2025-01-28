@@ -12,12 +12,12 @@ public class Employee {
 
 
     public Employee(String lastName, String ferstName, String middleName, int departament, int salary) {
-        setLastName(lastName);
-        setFerstName(ferstName);
-        setMidlleName(middleName);
-        setDepartament(departament);
-        setSalary(salary);
-        setId(++count);
+        this.lastName = lastName;
+        this.ferstName = ferstName;
+        this.midlleName = middleName;
+        this.departament = departament;
+        this.salary = salary;
+        this.id = ++count;
 
     }
 
@@ -42,29 +42,16 @@ public class Employee {
         return getFullName() + " " + departament + " " + salary;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setDepartament (int departament){
+        this.departament=departament;
+
     }
 
-    public void setFerstName(String ferstName) {
-        this.ferstName = ferstName;
-    }
-
-    public void setMidlleName(String midlleName) {
-        this.midlleName = midlleName;
-    }
-
-    public void setDepartament(int departament) {
-        this.departament = departament;
-    }
-
-    public void setSalary(int salary) {
+    private void setSalary(int salary) {
         this.salary = salary;
     }
 
-    public void setId(int id) {
-        this.id = ++count;
-    }
+
 
 
     @Override
@@ -72,7 +59,7 @@ public class Employee {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Employee employee = (Employee) obj;
-        return departament == employee.departament && salary == employee.salary && id == employee.id && Objects.equals(getFullName(),getFullName());
+        return departament == employee.departament && salary == employee.salary && id == employee.id && Objects.equals(getFullName(), getFullName());
     }
 
     @Override
