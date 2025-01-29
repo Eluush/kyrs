@@ -59,7 +59,7 @@ public class Employee {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Employee employee = (Employee) obj;
-        return departament == employee.departament && salary == employee.salary && id == employee.id && Objects.equals(getFullName(), getFullName());
+        return departament == employee.departament && salary == employee.salary && id == employee.id && Objects.equals(getFullName(), employee.getFullName());
     }
 
     @Override
