@@ -1,6 +1,5 @@
 import java.util.Arrays;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+
 
 public class Main {
 
@@ -86,9 +85,10 @@ public class Main {
         double count = 0;
         for (Employee emp : employees) {
             if (emp != null) {
+                count++;
                 totalSalary += emp.getSalary();
             }
-            count++;
+
         }
 
         if (count == 0) {
