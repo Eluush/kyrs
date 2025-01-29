@@ -32,7 +32,7 @@ public class Main {
 
     }
     public static void printAllEmployees (Employee[] all ){
-        for (Employee employee : all) {
+        for (Employee employee : all ) {
             if (employee != null) {
                 System.out.println(employee.toString());
             }
