@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static  Employee[] employees = new Employee[10];
+    private static Employee[] employees = new Employee[10];
 
     public static void main(String[] args) {
 
@@ -32,7 +32,7 @@ public class Main {
     }
 
     public static void printAllEmployees() {
-        for ( Employee employee : employees) {
+        for (Employee employee : employees) {
             if (employee != null) {
                 System.out.println(employee.toString());
             }
@@ -60,7 +60,7 @@ public class Main {
     }
 
     public static int getMinSalary() {
-        int minSalary = getSumSalary();
+        int minSalary = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() != 0 && employees[i].getSalary() < minSalary) {
                 minSalary = employees[i].getSalary();
@@ -81,9 +81,9 @@ public class Main {
         return maxSalary;
     }
 
-    public static int getTheAverageValue() {
+    public static double getTheAverageValue() {
         double totalSalary = 0;
-        int count = 0;
+        double count = 0;
         for (Employee emp : employees) {
             if (emp != null) {
                 totalSalary += emp.getSalary();
@@ -91,9 +91,11 @@ public class Main {
             count++;
         }
 
-        if(count==0){return 0;}
+        if (count == 0) {
+            return 0;
+        }
         double averageSalary = totalSalary / count;
-        return (int) averageSalary;
+        return averageSalary;
     }
 
 
