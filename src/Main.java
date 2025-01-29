@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static Employee[] employees = new Employee[10];
+    private static  Employee[] employees = new Employee[10];
 
     public static void main(String[] args) {
-
 
 
         employees[0] = new Employee("Иванов", "Иван", "Иванович", 1, 10000);
@@ -22,25 +21,26 @@ public class Main {
         employees[9] = new Employee("Гурченко", "Наталья", "Алексеевна", 5, 17000);
 
 
-        printAllEmployees(employees);
-        System.out.println("Сумма всех затрат на зарплаты составляет =" + getSumSalary(employees));
-        System.out.println("Минимальная зарптала составляет =" + getMinSalary(employees));
-        System.out.println("Максимальная зарптала составляет =" + getMaxSalary(employees));
-        printAllName(employees);
-        System.out.println(getTheAverageValue(employees));
+        printAllEmployees();
+        System.out.println("Сумма всех затрат на зарплаты составляет =" + getSumSalary());
+        System.out.println("Минимальная зарптала составляет =" + getMinSalary());
+        System.out.println("Максимальная зарптала составляет =" + getMaxSalary());
+        printAllName();
+        System.out.println(getTheAverageValue());
 
 
     }
-    public static void printAllEmployees (Employee[] all ){
-        for (Employee employee : all ) {
+
+    public static void printAllEmployees() {
+        for ( Employee employee : employees) {
             if (employee != null) {
                 System.out.println(employee.toString());
             }
         }
-
     }
-    public static void printAllName (Employee[]alls ){
-        for (Employee employee : alls) {
+
+    public static void printAllName() {
+        for (Employee employee : employees) {
             if (employee != null) {
                 System.out.println(employee.getFullName());
             }
@@ -49,7 +49,7 @@ public class Main {
     }
 
 
-    public static int getSumSalary(Employee[] employees) {
+    public static int getSumSalary() {
         int sum = 0;
         for (Employee employee : employees) {
             if (employee != null) {
@@ -59,8 +59,8 @@ public class Main {
         return sum;
     }
 
-    public static int getMinSalary(Employee[] employees) {
-        int minSalary = getSumSalary(employees);
+    public static int getMinSalary() {
+        int minSalary = getSumSalary();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() != 0 && employees[i].getSalary() < minSalary) {
                 minSalary = employees[i].getSalary();
@@ -70,7 +70,7 @@ public class Main {
         return minSalary;
     }
 
-    public static int getMaxSalary(Employee[] employees) {
+    public static int getMaxSalary() {
         int maxSalary = 0;
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() != 0 && employees[i].getSalary() > maxSalary) {
@@ -81,12 +81,20 @@ public class Main {
         return maxSalary;
     }
 
-    public static int getTheAverageValue(Employee[] employees) {
-        int theAverageValue = getSumSalary(employees);
-        for (int i = 0; i < employees.length; i++) {
-            theAverageValue = getSumSalary(employees) / employees.length;
+    public static int getTheAverageValue() {
+        double totalSalary = 0;
+        int count = 0;
+        for (Employee emp : employees) {
+            if (emp != null) {
+                totalSalary += emp.getSalary();
+            }
+            count++;
         }
-        return theAverageValue;
+
+        if(count==0){return 0;}
+        double averageSalary = totalSalary / count;
+        return (int) averageSalary;
     }
+
 
 }

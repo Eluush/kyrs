@@ -9,7 +9,7 @@ public class Employee {
     private String lastName;
     private String ferstName;
     private String midlleName;
-    Employee[] employees = new Employee[10];
+
 
     public Employee(String lastName, String ferstName, String middleName, int departament, int salary) {
         this.lastName = lastName;
