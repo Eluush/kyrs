@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static Employee[] employees = new Employee[10];
 
     public static void main(String[] args) {
 
 
-        Employee[] employees = new Employee[10];
+
         employees[0] = new Employee("Иванов", "Иван", "Иванович", 1, 10000);
         employees[1] = new Employee("Петров", "Петр", "Петрович", 2, 12000);
         employees[2] = new Employee("Макашова", "Алина", "Александровна", 3, 15000);
@@ -30,13 +31,13 @@ public class Main {
 
 
     }
-    public static void printAllEmployees (Employee[]all ){
+    public static void printAllEmployees (Employee[] all ){
         for (Employee employee : all) {
             if (employee != null) {
                 System.out.println(employee.toString());
             }
         }
-        return;
+
     }
     public static void printAllName (Employee[]alls ){
         for (Employee employee : alls) {
@@ -44,7 +45,7 @@ public class Main {
                 System.out.println(employee.getFullName());
             }
         }
-        return;
+
     }
 
 
@@ -82,7 +83,9 @@ public class Main {
 
     public static int getTheAverageValue(Employee[] employees) {
         int theAverageValue = getSumSalary(employees);
-        theAverageValue = getSumSalary(employees) / employees.length;
+        for (int i = 0; i < employees.length; i++) {
+            theAverageValue = getSumSalary(employees) / employees.length;
+        }
         return theAverageValue;
     }
 
